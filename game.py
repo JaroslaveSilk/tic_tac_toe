@@ -46,10 +46,14 @@ def main():
         print('Ход сделан!')
         game.display()
         if game.check_win(current_player):
-            print(f'Победили {current_player}.')
+            winner_line = f'Победили {current_player}.'
+            print(winner_line)
+            game.save_result(winner_line)
             running = False
         if game.is_board_full():
-            print('Ничья!')
+            winner_line = 'Ничья!'
+            print(winner_line)
+            game.save_result(winner_line)
             running = False
         current_player = 'O' if current_player == 'X' else 'X'
 

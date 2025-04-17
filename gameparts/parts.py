@@ -49,6 +49,12 @@ class Board:
 
         return False
 
+    def save_result(self, statistics_line: str):
+        """Метод записывающий резултаты игр в файл для статистики"""
+        file = open('win_statistics.txt', 'a', encoding='utf-8')
+        file.write(statistics_line + '\n')
+        file.close()
+
     def __str__(self):
         """Метод, который выводит информацию о размерах игрового поля."""
         return (
